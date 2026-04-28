@@ -1,0 +1,22 @@
+{
+  "mode": "openai-compatible",
+  "provider": "openai",
+  "baseUrl": "https://api.openai.com/v1",
+  "wireApi": "responses",
+  "model": "gpt-5.4",
+  "reasoningEffort": "xhigh",
+  "clientProfile": "openai-js",
+  "responseReadTimeoutMs": 180000,
+  "responseTimeoutMode": "idle",
+  "components": {
+    "generalization": {
+      "enabled": true
+    },
+    "plannerOptimization": {
+      "enabled": true
+    }
+  },
+  "callProfiles": {},
+  "apiKey": "${OPENAI_API_KEY}",
+  "apiKeyEnv": "OPENAI_API_KEY"
+}

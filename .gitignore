@@ -1,0 +1,12 @@
+node_modules/
+out/
+coverage/
+.runs/
+*.log
+.DS_Store
+.env
+config/llm.local.json
+config/llm.config2.json
+config/llm.wecode.config.json
+config/llm.crs.config.json
+test/fixtures/e2e-cases/

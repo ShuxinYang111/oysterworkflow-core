@@ -1,0 +1,41 @@
+{
+  "name": "oysterworkflow-core",
+  "version": "0.1.0",
+  "description": "Core Screenpipe ingest and OpenClaw skill extraction pipeline for OysterWorkflow.",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "type": "module",
+  "bin": {
+    "oysterworkflow-core": "out/cli/index.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "tsx src/cli/index.ts",
+    "ingest": "tsx src/cli/index.ts ingest",
+    "extract-skill": "tsx src/cli/index.ts extract-skill",
+    "extract-skill-llm": "tsx src/cli/index.ts extract-skill-llm",
+    "discover-workflows": "tsx src/cli/index.ts discover-workflows",
+    "e2e-analyze": "tsx src/cli/index.ts e2e-analyze",
+    "case-loop": "tsx src/cli/index.ts case-loop",
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --dir test",
+    "test:watch": "vitest --dir test",
+    "llm:smoke": "node scripts/llm-smoke-test.mjs"
+  },
+  "dependencies": {
+    "commander": "^14.0.2",
+    "dotenv": "^16.6.1",
+    "js-tiktoken": "^1.0.21",
+    "pino": "^9.11.0",
+    "undici": "^7.16.0",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  }
+}
