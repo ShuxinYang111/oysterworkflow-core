@@ -580,11 +580,24 @@ function assertSequentialSteps(steps: ValidatedSkill["steps"]): void {
 }
 
 function buildGeneratedInstallName(rawName: string, skillId: string): string {
+  const trimmed = rawName.trim();
+  if (GENERATED_NAME_PATTERN.test(trimmed)) {
+    return normalizeInstallNameForLookup(trimmed);
+  }
+
   const normalized = slugifyName(rawName);
   const baseName = normalized || `skill-${skillId.slice(0, 8).toLowerCase()}`;
   return baseName.startsWith(GENERATED_PREFIX)
-    ? baseName
+    ? normalizeGeneratedInstallName(baseName)
     : `${GENERATED_PREFIX}${baseName}`;
+}
+
+function normalizeGeneratedInstallName(input: string): string {
+  const versionedName = parseInstallNameVersion(input);
+  if (!versionedName) {
+    return input;
+  }
+  return `${versionedName.baseName}-V${versionedName.version}`;
 }
 
 function normalizeInstallNameForLookup(input: string): string {
