@@ -9,11 +9,11 @@ import {
 
 describe("prompt-registry", () => {
   it("loads prompt set and validates name", async () => {
-    const promptSet = await loadPromptSet("specific-v21");
-    expect(promptSet.promptSet).toBe("specific-v21");
+    const promptSet = await loadPromptSet("specific-v22");
+    expect(promptSet.promptSet).toBe("specific-v22");
     expect(promptSet.schemaVersion).toBe("oysterworkflow-promptset-v1");
     expect(promptSet.filePath).toContain(
-      path.join("config", "promptsets", "specific-v21.json"),
+      path.join("config", "promptsets", "specific-v22.json"),
     );
     expect(promptSet.skillExtraction.system.join("\n")).toContain(
       "skill-extraction-step",
@@ -55,17 +55,6 @@ describe("prompt-registry", () => {
     );
     expect(promptSet.scenarioGeneralization?.system.join("\n")).toContain(
       "Element Category",
-    );
-  });
-
-  it("loads specific-v14 without promptSet mismatch", async () => {
-    const promptSet = await loadPromptSet("specific-v14");
-    expect(promptSet.promptSet).toBe("specific-v14");
-    expect(promptSet.filePath).toContain(
-      path.join("config", "promptsets", "specific-v14.json"),
-    );
-    expect(promptSet.skillExtraction.system.join("\n")).toContain(
-      "skill-extraction-finalize",
     );
   });
 

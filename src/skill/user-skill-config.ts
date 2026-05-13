@@ -20,6 +20,6 @@ export const userSkillConfigSchema = z.object({
 
 export const DEFAULT_USER_SKILL_CONFIG: UserSkillConfig = {
   granularity: "specific",
-  promptSet: "specific-v21",
-  promptVersionTag: "specific-v21-2026-04-09-planner-whentouse-guidance",
+  promptSet: "specific-v22",
+  promptVersionTag: "specific-v22-2026-04-15-audio-priority-alignment",
 };

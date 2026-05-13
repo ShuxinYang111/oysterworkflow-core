@@ -141,7 +141,7 @@ describe("extractOpenClawSkillLlm", () => {
     });
 
     expect(result.skill.schemaVersion).toBe("openclaw-skill-v1");
-    expect(result.skill.promptSet).toBe("specific-v21");
+    expect(result.skill.promptSet).toBe("specific-v22");
     expect(result.skill.skillName).toBe("Book Flight Workflow");
     expect(result.skill.executionMode).toBe("autonomous");
     expect(result.skill.steps.length).toBeGreaterThanOrEqual(2);
@@ -165,7 +165,7 @@ describe("extractOpenClawSkillLlm", () => {
     const savedSkill = JSON.parse(
       await readFile(result.paths.skillPath, "utf8"),
     ) as { promptSet?: string | null; steps?: Array<Record<string, unknown>> };
-    expect(savedSkill.promptSet).toBe("specific-v21");
+    expect(savedSkill.promptSet).toBe("specific-v22");
     expect(
       savedSkill.steps?.every((step) => !("evidenceEventIds" in step)),
     ).toBe(true);

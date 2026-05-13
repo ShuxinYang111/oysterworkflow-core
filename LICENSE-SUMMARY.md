@@ -2,31 +2,23 @@
 
 This file is a plain-language summary for convenience only.
 
-The actual legal terms are in [LICENSE](./LICENSE). If anything here conflicts with the license text, the license text controls.
+The actual legal terms are in [LICENSE](./LICENSE). If anything here
+conflicts with the license text, the license text controls.
 
-## What The Public License Allows
+## Apache-2.0
 
-OysterWorkflow Core is licensed under PolyForm Noncommercial 1.0.0.
+OysterWorkflow Core is licensed under the Apache License, Version 2.0.
 
-People may use, study, modify, and distribute the source for noncommercial purposes such as:
+The license allows people to use, study, modify, distribute, and
+commercially use the project, including inside proprietary software,
+as long as they follow the notice, attribution, and license terms.
 
-- personal evaluation
-- research
-- study
-- education
-- nonprofit use that fits the license terms
+Apache-2.0 also includes an explicit patent grant from contributors
+and a patent termination clause for patent litigation involving the
+licensed work.
 
-## What The Public License Does Not Allow
+## Responsibilities
 
-The public license does not grant commercial rights.
-
-You should not assume you can:
-
-- sell the software
-- bundle it into a paid service or paid product
-- use it as part of a commercial offering
-- redistribute it for commercial gain
-
-Commercial use requires a separate written license from the author.
-
-Contact: `shuxin.y.97@gmail.com`
+When redistributing the project or derivatives, keep the Apache-2.0
+license text and required copyright or NOTICE information. If you
+modify files, mark those files as changed where appropriate.

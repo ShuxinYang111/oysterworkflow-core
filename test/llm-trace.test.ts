@@ -270,12 +270,12 @@ describe("llm trace recording", () => {
 
     for (const trace of traces) {
       const promptMeta = trace.promptMeta as Record<string, unknown>;
-      expect(promptMeta?.promptSet).toBe("specific-v21");
+      expect(promptMeta?.promptSet).toBe("specific-v22");
       expect(promptMeta?.promptSchemaVersion).toBe(
         "oysterworkflow-promptset-v1",
       );
       expect(String(promptMeta?.promptFilePath)).toContain(
-        path.join("config", "promptsets", "specific-v21.json"),
+        path.join("config", "promptsets", "specific-v22.json"),
       );
       const { systemText, userText } = getTraceText(trace);
       expect(collectUnresolvedPlaceholders(systemText)).toEqual([]);
@@ -291,7 +291,7 @@ describe("llm trace recording", () => {
       workflowDiscoveryTrace as Record<string, unknown>,
     ).userText;
     const normalizedCallAUserText = callAUserText.replace(/\s+/g, " ");
-    expect(callAUserText).toContain("promptSet=specific-v21");
+    expect(callAUserText).toContain("promptSet=specific-v22");
     expect(callAUserText).toContain("Raw activity log");
     expect(callAUserText).toContain('"eventType": "click"');
     expect(callAUserText).toContain(

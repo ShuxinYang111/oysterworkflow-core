@@ -2,11 +2,30 @@
   "name": "oysterworkflow-core",
   "version": "0.1.0",
   "description": "Core Screenpipe ingest and OpenClaw skill extraction pipeline for OysterWorkflow.",
-  "license": "PolyForm-Noncommercial-1.0.0",
+  "license": "Apache-2.0",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShuxinYang111/oysterworkflow-core.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ShuxinYang111/oysterworkflow-core/issues"
+  },
+  "homepage": "https://github.com/ShuxinYang111/oysterworkflow-core#readme",
   "bin": {
     "oysterworkflow-core": "out/cli/index.js"
   },
+  "files": [
+    "out/",
+    "config/",
+    "scripts/",
+    "README.md",
+    "LICENSE",
+    "LICENSE-SUMMARY.md",
+    "NOTICE",
+    "SECURITY.md",
+    "PRIVACY.md"
+  ],
   "engines": {
     "node": ">=20"
   },
@@ -22,6 +41,7 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run --dir test",
     "test:watch": "vitest --dir test",
+    "prepack": "npm run build",
     "llm:smoke": "node scripts/llm-smoke-test.mjs"
   },
   "dependencies": {
