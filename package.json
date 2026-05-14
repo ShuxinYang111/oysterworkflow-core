@@ -42,6 +42,8 @@
     "test": "vitest run --dir test",
     "test:watch": "vitest --dir test",
     "prepack": "npm run build",
+    "screenpipe:install": "node scripts/install-compatible-screenpipe.mjs",
+    "screenpipe:start": "node scripts/start-compatible-screenpipe.mjs",
     "llm:smoke": "node scripts/llm-smoke-test.mjs"
   },
   "dependencies": {

@@ -32,6 +32,7 @@ requests.
 - Node.js 20 or newer
 - npm
 - Screenpipe running locally for live ingest commands
+- Git and Rust/Cargo if using `npm run screenpipe:install`
 - an OpenAI-compatible API key for LLM-backed extraction
 
 ## Setup
@@ -51,6 +52,40 @@ ignored by Git.
 npm run typecheck
 npm test
 npm run build
+```
+
+## Recorder Setup
+
+OysterWorkflow Core reads from a running Screenpipe-compatible recorder. For the
+simplest setup, install the OysterWorkflow-compatible Screenpipe fork:
+
+```bash
+npm run screenpipe:install
+npm run screenpipe:start
+```
+
+The installer clones
+[ShuxinYang111/screenpipe](https://github.com/ShuxinYang111/screenpipe), checks
+out `oysterworkflow-compatible-v0.3.304`, and builds the `screenpipe` binary
+with Cargo under `~/.oysterworkflow/screenpipe`.
+
+The starter runs:
+
+```bash
+screenpipe record \
+  --port 3030 \
+  --disable-audio \
+  --fps 1 \
+  --language chinese \
+  --language english \
+  --enable-ui-events
+```
+
+You can override the install location or binary path with:
+
+```bash
+OYSTERWORKFLOW_SCREENPIPE_DIR=/custom/screenpipe npm run screenpipe:install
+OYSTERWORKFLOW_SCREENPIPE_BIN=/custom/screenpipe/target/release/screenpipe npm run screenpipe:start
 ```
 
 Live ingest from a local Screenpipe instance:
@@ -124,6 +159,18 @@ test/                   Vitest coverage
 Contributions are welcome, especially around reproducible bugs, fixture-backed
 tests, Screenpipe compatibility, and output contract clarity. Please read
 [CONTRIBUTING.md](./CONTRIBUTING.md) first.
+
+## Attribution
+
+OysterWorkflow Core is built to consume Screenpipe-compatible local activity
+data. The recommended recorder is an OysterWorkflow-compatible fork of
+[Screenpipe](https://github.com/mediar-ai/screenpipe). Special thanks to
+[louis030195](https://github.com/louis030195), Mediar, and the Screenpipe
+contributors for the original local-first recorder and API surface.
+
+Screenpipe is licensed separately from this repository. The compatible fork
+keeps the upstream root MIT License and the upstream `ee/` Enterprise Edition
+License.
 
 ## Security
 
