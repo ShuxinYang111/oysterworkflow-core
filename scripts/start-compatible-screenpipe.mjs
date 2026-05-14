@@ -28,7 +28,6 @@ const defaultArgs = [
   "chinese",
   "--language",
   "english",
-  "--enable-ui-events",
 ];
 
 const args = [...defaultArgs, ...process.argv.slice(2)];

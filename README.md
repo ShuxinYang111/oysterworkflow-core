@@ -77,8 +77,7 @@ screenpipe record \
   --disable-audio \
   --fps 1 \
   --language chinese \
-  --language english \
-  --enable-ui-events
+  --language english
 ```
 
 You can override the install location or binary path with:
